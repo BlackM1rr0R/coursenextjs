@@ -1,0 +1,48 @@
+.category {
+  margin-top: 60px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.categoryControl {
+  display: flex;
+  justify-content: space-between; /* bərabər boşluq */
+  align-items: center;
+  will-change: transform;
+    padding: 16px 0;
+}
+
+.animate {
+  animation: scroll 20s linear infinite;
+}
+
+.categoryLink {
+  flex: 0 0 auto; /* kartlar sabit ölçüdə qalsın */
+  text-decoration: none;
+  color: black;
+  background-color: rgba(128, 128, 128, 0.24);
+  padding: 14px 28px;
+  border-radius: 12px;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* başladığı yerdən */
+  }
+  100% {
+    transform: translateX(-100%); /* ikinci təkrar hissəyə qədər */
+  }
+}
+.categoryLink:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 255, 0.171);
+  filter: brightness(1.1);
+}

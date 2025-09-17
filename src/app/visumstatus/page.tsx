@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { getProfile, updateProfile, ProfileData } from "../api";
-import styles from './profile.module.css';
+import styles from './visumstatus.module.css';
 import Wrapper from "../component/wrapper/wrapper";
 import { useRouter } from "next/navigation";
 
-const ProfilePage = () => {
+const VisumStatus = () => {
   const { token ,logout} = useAuth();
   const [profile, setProfile] = useState<ProfileData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -75,60 +75,29 @@ const ProfilePage = () => {
     <Wrapper>
       <div className={styles.container}>
         <h1 className={styles.title}>Welcome, {profile.name} {profile.surname}</h1>
-
-        {/* Editable fields */}
         <div className={styles.infoItem}>
-          <span className={styles.label}>Email:</span>
-          <input
-            type="email"
-            value={formData.email || ""}
-            onChange={(e) => handleChange("email", e.target.value)}
-            className={styles.inputField}
-          />
-        </div>
-
-        <div className={styles.infoItem}>
-          <span className={styles.label}>Name:</span>
+          <span className={styles.label}>Visa:</span>
           <input
             type="text"
-            value={formData.name || ""}
-            onChange={(e) => handleChange("name", e.target.value)}
-            className={styles.inputField}
+            value={formData.visa || ""}
+            className={styles.inputField + " " + styles.readonlyField}
+            readOnly
           />
         </div>
 
         <div className={styles.infoItem}>
-          <span className={styles.label}>Surname:</span>
+          <span className={styles.label}>Visa Status:</span>
           <input
             type="text"
-            value={formData.surname || ""}
-            onChange={(e) => handleChange("surname", e.target.value)}
-            className={styles.inputField}
+            value={formData.visaStatus || ""}
+            className={styles.inputField + " " + styles.readonlyField}
+            readOnly
           />
         </div>
 
-        <div className={styles.infoItem}>
-          <span className={styles.label}>Phone:</span>
-          <input
-            type="text"
-            value={formData.phoneNumber || ""}
-            onChange={(e) => handleChange("phoneNumber", e.target.value)}
-            className={styles.inputField}
-          />
-        </div>
-
-     
-
-        <button
-          onClick={handleUpdate}
-          disabled={updating}
-          className={styles.updateButton}
-        >
-          {updating ? "Updating..." : "Update Profile"}
-        </button>
       </div>
     </Wrapper>
   );
 };
 
-export default ProfilePage;
+export default VisumStatus;

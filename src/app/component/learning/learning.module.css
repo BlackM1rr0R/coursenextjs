@@ -1,0 +1,162 @@
+.heading {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.control {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 40px;
+  padding-bottom: 20px;
+}
+
+.controlMap {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.08);
+  border-radius: 12px;
+  width: calc(24% - 30px); /* Desktop: 4 kart yan-yana */
+  padding: 16px;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.controlMap:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+  width: 100%;
+  height: 200px; /* adaptiv hündürlük */
+}
+
+.images img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.title {
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 14px;
+  color: #555;
+}
+
+.aboutText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+  gap: 5px;
+}
+
+.buttonControl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* button-lar alt-alta keçsin mobil üçün */
+  gap: 10px;
+}
+
+.buttonOne {
+  background-color: black;
+  padding: 12px 16px;
+  width: 100%;
+  max-width: 200px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buttonTwo {
+  background-color: transparent;
+  border: 2px dotted gold;
+  padding: 12px 16px;
+  width: 60px;
+  height: 60px;
+  color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 📱 Tablet üçün */
+@media (max-width: 1024px) {
+  .controlMap {
+    width: calc(50% - 20px); /* 2 kart yan-yana */
+  }
+
+  .images {
+    height: 180px;
+  }
+
+  .buttonOne {
+    max-width: 180px;
+  }
+
+  .buttonTwo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* 📱 Mobil üçün */
+@media (max-width: 768px) {
+  .controlMap {
+    width: 100%; /* 1 kart alt-alta */
+  }
+
+  .images {
+    height: 150px;
+  }
+
+  .buttonOne {
+    max-width: 100%;
+  }
+
+  .buttonTwo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .aboutText {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .buttonControl {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

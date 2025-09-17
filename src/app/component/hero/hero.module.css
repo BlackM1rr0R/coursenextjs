@@ -1,0 +1,128 @@
+.hero {
+  margin-top: 50px;
+  position: relative;
+  padding: 20px;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+align-items: center;
+  gap: 30px;
+}
+
+.textContainer {
+  font-weight: 700;
+  font-size: 32px;
+  max-width: 500px;
+  position: relative;
+
+  top: -120px; /* default positiondan yuxarı çəkir */
+}
+
+
+.imageContainer img {
+  width: 100%;
+  display: block;
+}
+
+.arrowImage,
+.arrowImage1,
+.controlTextBooked {
+  position: absolute;
+}
+
+.arrowImage {
+  bottom: 5%;
+  left: -15%;
+}
+
+.arrowImage img {
+  width: 80px;
+}
+
+.arrowImage1 {
+  bottom: 0;
+  right: 35%;
+}
+
+.arrowImage1 img {
+  width: 80px;
+}
+
+.controlTextBooked {
+  bottom: 10%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+}
+
+.controlTextBooked h2 {
+  display: block;
+  font-size: 14px;
+  rotate: 40deg;
+  color: #FF991F;
+  background-color: #FFFAF3;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.button {
+  background-color: black;
+  color: white;
+  padding: 20px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* 📱 Mobil üçün (max 768px) */
+@media (max-width: 768px) {
+  .control {
+    flex-direction: column; /* yazı və şəkil alt-alta */
+    text-align: center;
+  }
+
+  .textContainer {
+    font-size: 24px;
+    max-width: 100%;
+    top: 0;
+    transform: none;
+  }
+
+  .button {
+    width: 100%; /* mobil üçün tam genişlik */
+    padding: 15px 0;
+    font-size: 14px;
+  }
+
+  .arrowImage,
+  .arrowImage1,
+  .controlTextBooked {
+    display: none; /* mobil görünüşdə qarmaqarışıqlığı azaltmaq üçün gizlədilir */
+  }
+}
+
+/* 📲 Tablet üçün (max 1024px) */
+@media (max-width: 1024px) {
+  .textContainer {
+    font-size: 32px;
+    max-width: 400px;
+  }
+
+  .button {
+    padding: 18px 25px;
+    font-size: 15px;
+  }
+
+  .arrowImage img,
+  .arrowImage1 img {
+    width: 60px;
+  }
+
+  .controlTextBooked h2 {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+}

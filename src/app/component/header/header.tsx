@@ -25,6 +25,7 @@ export default function Header() {
             {email ? (
               <>
                 <Link href={`/profile`} className={styles.emailDisplay}>{email}</Link>
+                <Link href={`/visumstatus`} className={styles.emailDisplay}>My visum</Link>
                 <button onClick={logout} className={styles.logoutButton}>Logout</button>
               </>
             ) : (

@@ -1,0 +1,190 @@
+.control {
+  margin-top: 140px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ==== TEXT ==== */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.best {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bestText {
+  background: linear-gradient(90deg, #FAC1F1, #B176F2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.instructorText {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.middleText p {
+  width: 400px;
+  font-weight: 600;
+}
+
+.bottomText button {
+  background-color: black;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.bottomText button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.imageControl {
+  position: relative;
+}
+.imageControl img {
+  position: absolute;
+  bottom: -20%;
+  left: 45%;
+}
+
+.instructor54 {
+  position: relative;
+}
+.instructor54 h2 {
+  position: absolute;
+  bottom: 50px;
+  left: 230px;
+  rotate: 40deg;
+  font-size: 14px;
+  color: rgba(0, 0, 255, 0.644);
+  background-color: #b276f244;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+/* ==== IMAGE GRID ==== */
+.visumContainer {
+  position: relative;
+}
+
+.imageVisum {
+  position: relative;
+  z-index: 1;
+}
+.imageVisum img {
+  border-radius: 20px;
+  max-width: 100%;
+}
+
+.controlMap {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.maps img {
+  width: 100%;
+  border-radius: 10px;
+}
+.mapsText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mapsText h2 {
+  font-size: 14px;
+}
+.maps {
+  background-color: rgba(128, 128, 128, 0.137);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 180px;
+  max-width: 150px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+.maps:hover {
+  transform: scale(1.05);
+}
+
+/* === MOBIL RESPONSIVE === */
+@media (max-width: 767px) {
+  .control {
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+
+  /* Text hissəsi daha sıx */
+  .textContainer {
+    gap: 20px;
+  }
+
+  .middleText p {
+    width: 100%;
+  }
+
+  .bottomText {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* ImageControl və instructor54 mövqelərini ləğv et */
+  .imageControl,
+  .instructor54 {
+    position: static;
+    transform: none;
+    bottom: auto;
+    left: auto;
+  }
+
+  /* Visum şəkilləri kart kimi */
+  .visumContainer {
+    position: static;
+  }
+
+  .controlMap {
+    position: static;
+    transform: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .maps {
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .mapsText {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+

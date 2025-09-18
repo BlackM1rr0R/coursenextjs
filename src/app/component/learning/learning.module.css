@@ -17,7 +17,7 @@
   flex-direction: column;
   background-color: rgba(128, 128, 128, 0.08);
   border-radius: 12px;
-  width: calc(24% - 30px); /* Desktop: 4 kart yan-yana */
+  width: calc(33.333333% - 30px); /* Desktop: 4 kart yan-yana */
   padding: 16px;
   gap: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);

@@ -8,14 +8,14 @@ type LoginData = {
 };
 
 type RegisterData = {
-  email:string;
-  password:string;
-  name:string;
-  surname:string;
-  phoneNumber:string;
-  role:string;
-  visa:string;
-  visaStatus:string;
+  email: string;
+  password: string;
+  name: string;
+  surname: string;
+  phoneNumber: string;
+  role: string;
+  visa: string;
+  visaStatus: string;
 };
 
 export type ProfileData = {
@@ -60,5 +60,21 @@ export async function updateProfile(
       "X-User-Email": localStorage.getItem("email") || "",
     },
   });
+  return response.data;
+}
+
+export async function sendEmail(
+  to: string,
+  subject: string,
+  body: string
+): Promise<string> {
+  const token = localStorage.getItem("token"); 
+  const response = await axios.post("http://localhost:8080/email/send", null, {
+    params: { to, subject, body },
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
   return response.data;
 }
